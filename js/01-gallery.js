@@ -26,15 +26,18 @@ gallery.insertAdjacentHTML("afterbegin", markup);
 //otwieranie podglądu obrazu
 function handleClick(event) {
   event.preventDefault();
-  const selectedImage = event.target.dataset.source;
-  instance = basicLightbox.create(
-    `
+  console.log(event.target.classList);
+  if (event.target.classList.contains("gallery__image")) {
+    const selectedImage = event.target.dataset.source;
+    instance = basicLightbox.create(
+      `
   		<img width="1400" height="900" src="${selectedImage}">
   	`
-  );
-  instance.show();
+    );
+    instance.show();
 
-  document.addEventListener("keydown", closePreview);
+    document.addEventListener("keydown", closePreview);
+  }
 }
 //zamykanie podglądu obrazu z klawisza Esc
 function closePreview(event) {
