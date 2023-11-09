@@ -13,10 +13,12 @@ const markup = galleryItems
   .join("");
 gallery.insertAdjacentHTML("afterbegin", markup);
 
+//wyszukanie elementów galerii dla skryptu SimpleLightbox
 const galleryImages = document.querySelectorAll(".gallery__item");
 
+//inicjalizacja biblioteki SimpleLightboxs
 new SimpleLightbox(galleryImages, {
-  captionData: "alt",
+  captionsData: "alt",
   captionDelay: 250,
   captionPosition: "bottom",
 });

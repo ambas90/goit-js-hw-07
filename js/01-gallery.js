@@ -24,7 +24,6 @@ const markup = galleryItems
 gallery.insertAdjacentHTML("afterbegin", markup);
 
 //otwieranie podglądu obrazu
-
 function handleClick(event) {
   event.preventDefault();
   const selectedImage = event.target.dataset.source;
