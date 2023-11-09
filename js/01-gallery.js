@@ -26,7 +26,6 @@ gallery.insertAdjacentHTML("afterbegin", markup);
 //otwieranie podglądu obrazu
 function handleClick(event) {
   event.preventDefault();
-  console.log(event.target.classList);
   if (event.target.classList.contains("gallery__image")) {
     const selectedImage = event.target.dataset.source;
     instance = basicLightbox.create(
