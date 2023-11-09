@@ -35,15 +35,13 @@ function handleClick(event) {
   );
   instance.show();
 
-  if (instance.visible()) {
-    document.addEventListener("keydown", closePreview);
-  } else {
-    document.removeEventListener("keydonw", closePreview);
-  }
+  document.addEventListener("keydown", closePreview);
 }
 //zamykanie podglądu obrazu z klawisza Esc
 function closePreview(event) {
   if (event.key == "Escape") {
+    console.log("naciśnięto esc");
+    document.removeEventListener("keydown", closePreview);
     instance.close();
   }
 }
